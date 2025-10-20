@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maya_flutter_exam/presentation/send_money_cubit/send_money_cubit.dart';
 import 'package:maya_flutter_exam/presentation/send_money_cubit/send_money_state.dart';
 import 'package:maya_flutter_exam/widgets/drawer_widget.dart';
-import 'package:maya_flutter_exam/widgets/success_transaction_dialog.dart';
+import 'package:maya_flutter_exam/widgets/transaction_result_dialog.dart';
 
 class SendMoneyScreen extends StatefulWidget {
   const SendMoneyScreen({super.key});
@@ -155,7 +155,7 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor: WidgetStateProperty.all<Color>(
-                          _isValid ? const Color(0xFF9FE8A5) : Colors.grey,
+                          _isValid ? const Color(0xFF00B464) : Colors.grey,
                         ),
                         shape:
                             WidgetStateProperty.resolveWith<
@@ -169,7 +169,10 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                       onPressed: _isValid ? _onSendPressed : null,
                       child: const Padding(
                         padding: EdgeInsets.symmetric(vertical: 14.0),
-                        child: Text('Send', style: TextStyle(fontSize: 16)),
+                        child: Text(
+                          'Send',
+                          style: TextStyle(fontSize: 16, color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
