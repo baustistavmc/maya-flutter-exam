@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maya_flutter_exam/domain/use_cases/send_money.dart';
-import 'package:maya_flutter_exam/presentation/send_money_cubit/send_money_state.dart';
+import 'package:maya_flutter_exam/presentation/cubits/send_money_cubit/send_money_state.dart';
 
 class SendMoneyCubit extends Cubit<SendMoneyState> {
   final SendMoneyUseCase useCase;
