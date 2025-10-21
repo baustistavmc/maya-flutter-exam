@@ -37,7 +37,9 @@ flutter clean
 flutter pub get
 ```
 
-5. **Run the Application**
+5. **Open Mobile Simulator**
+
+6. **Run the Application**
 
 ```bash
 flutter run
