@@ -6,6 +6,7 @@ import 'package:maya_flutter_exam/presentation/cubits/get_transaction_list_cubit
 import 'package:maya_flutter_exam/presentation/cubits/get_transaction_list_cubit/get_transaction_list_state.dart';
 import 'package:maya_flutter_exam/presentation/screens/auth_screen.dart';
 import 'package:maya_flutter_exam/widgets/drawer_widget.dart';
+import 'package:maya_flutter_exam/widgets/error_screen.dart';
 import 'package:maya_flutter_exam/widgets/transaction_list_widget.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -50,8 +51,12 @@ class _TransactionListScreenState extends State<TransactionListScreen> {
               loading: () => _buildShimmer(),
               loaded: (transactions) =>
                   TransactionListView(transactions: transactions),
-              error: (message) =>
-                  Center(child: Text('Error fetching transactions: $message')),
+              error: (message) => ErrorScreen(
+                message: 'Please try again.',
+                onRetry: () {
+                  context.read<TransactionListCubit>().fetchTransactions();
+                },
+              ),
             );
           },
         ),
