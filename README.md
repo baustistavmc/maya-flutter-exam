@@ -44,8 +44,10 @@ flutter run
 ```
 
 ## Sign In Credentials
+```
 username: user
 password: password
+```
 
 ## Running Unit Tests
 
